@@ -1,31 +1,32 @@
+// hamburger
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobile-menu');
-const closeMenu = document.getElementById('close-menu');
-const Overlay = document.getElementById('menu-overlay');
+const closeMenu = document.getElementById('close-mennu');
+const overlay = document.getElementById('menu-overlay');
 
 hamburger.addEventListener('click', () => {
     mobileMenu.classList.remove('-translate-x-full');
-    Overlay.classList.remove('hidden');
+    overlay.classList.remove('hidden');
 });
 
 const hideMenu = () => {
     mobileMenu.classList.add('-translate-x-full');
-    Overlay.classList.add('hidden');
+    overlay.classList.add('hidden');
 };
 
 closeMenu.addEventListener('click', hideMenu);
-Overlay.addEventListener('click', hideMenu);
+overlay.addEventListener('click', hideMenu);
 
 function toggleFaq(element) {
-    const allItems = document.querySelectorAll("faq-items");
-    const content = element.querySelector("faq-content");
+    const allItems = document.querySelectorAll(".faq-items");
+    const content = element.querySelector(".faq-content");
     const img = element.querySelector("img");
     const openIcon = "/asset/+ logo.svg";
     const closeIcon = "/asset/- icon.svg";
     const isOpening = !content.style.maxHeight;
 
     allItems.forEach(item => {
-        const itemContent = item.querySelector('faq-content');
+        const itemContent = item.querySelector('.faq-content');
         const itemImg = item.querySelector('img');
         itemContent.style.maxHeight = null;
         itemImg.src = openIcon
